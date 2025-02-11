@@ -3,7 +3,8 @@
 void	destroy_images(t_data *data)
 {
 	mlx_destroy_image(data->mlx, data->img_collectible);
-	mlx_destroy_image(data->mlx, data->img_exit);
+	mlx_destroy_image(data->mlx, data->img_active_exit);
+	mlx_destroy_image(data->mlx, data->img_inactive_exit);
 	mlx_destroy_image(data->mlx, data->img_floor);
 	mlx_destroy_image(data->mlx, data->img_player);
 	mlx_destroy_image(data->mlx, data->img_wall);

@@ -1,35 +1,5 @@
-#include "../so_long.h"
+#include "../so_long_bonus.h"
 
-size_t	free_map_cpy(t_data *data)
-{
-	size_t	i;
-
-	i = 0;
-	while (data->map_cpy[i])
-	{
-		free(data->map_cpy[i]);
-		i++;
-	}
-	free(data->map_cpy);
-	return (1);
-}
-
-size_t	create_map_cpy(t_data *data)
-{
-	size_t	i;
-
-	i = 0;
-	while (i < data->height)
-	{
-		data->map_cpy[i] = (char *)malloc(sizeof(char) * (data->width + 1));
-		if (!data->map_cpy[i])
-			return (perror("Error\n"), free_map_cpy(data));
-		ft_memset(data->map_cpy[i], 'O', data->width);
-		i++;
-	}
-	data->map_cpy[i] = NULL;
-	return (0);
-}
 
 void	flood_fill(t_data *data, int x, int y, char **map_cpy)
 {
@@ -83,10 +53,9 @@ size_t	check_path(t_data *data)
 	data->map_cpy = (char **)malloc(sizeof(char *) * (data->height + 1));
 	if (!data->map_cpy)
 		return (perror("Error\n"), 1);
-	if (create_map_cpy(data))
+	if (create_map_copy(data))
 		return (free_map(data));
 	if (check_if_reachable(data))
 		return (free_map(data));
-	free_map_cpy(data);
 	return (0);
 }

@@ -2,28 +2,28 @@
 
 void	move_player(t_data *data, int x, int y)
 {
-	if (data->map[data->player_y + y][data->player_x + x] != '1')
+	if (data->map[data->player.y + y][data->player.x + x] != '1')
 	{
-		if (data->map[data->player_y + y][data->player_x + x] == 'E')
+		if (data->map[data->player.y + y][data->player.x + x] == 'E')
 		{
-			if (data->chests_collected != data->total_collectibles)
+			if (data->crystals_collected != data->total_collectibles)
 				return ;
 			data->player_moves++;
 			printf("Game over, you won!");
 			close_window(data);
 			exit(0);
 		}
-		else if (data->map[data->player_y + y][data->player_x + x] == 'C')
-			data->chests_collected++;
-		data->map[data->player_y + y][data->player_x + x] = 'P';
-		data->map[data->player_y][data->player_x] = '0';
-		data->player_x += x;
-		data->player_y += y;
+		else if (data->map[data->player.y + y][data->player.x + x] == 'C')
+			data->crystals_collected++;
+		data->map[data->player.y + y][data->player.x + x] = 'P';
+		data->map[data->player.y][data->player.x] = '0';
+		data->player.x += x;
+		data->player.y += y;
 		data->player_moves++;
 		render_map(data);
-		ft_printf("Player move count = %i\nChests collected %i/%i\n",
+		ft_printf("Player move count = %i\nCrystals collected %i/%i\n",
 					data->player_moves,
-					data->chests_collected,
+					data->crystals_collected,
 					data->total_collectibles);
 	}
 }

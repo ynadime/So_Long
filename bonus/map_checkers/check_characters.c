@@ -1,4 +1,4 @@
-#include "../so_long.h"
+#include "../so_long_bonus.h"
 
 size_t	check_invalid_characters(t_data *data)
 {
@@ -13,7 +13,7 @@ size_t	check_invalid_characters(t_data *data)
 		{
 			if (data->map[y][x] != '0' && data->map[y][x] != '1'
 				&& data->map[y][x] != 'C' && data->map[y][x] != 'E'
-				&& data->map[y][x] != 'P')
+				&& data->map[y][x] != 'P' && data->map[y][x] != 'F')
 			{
 				printerr("Error\n");
 				printerr("Invalid character found at (%i,%i)", x, y);

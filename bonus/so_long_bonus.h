@@ -1,11 +1,11 @@
-#ifndef SO_LONG_H
-# define SO_LONG_H
+#ifndef SO_LONG_BONUS_H
+# define SO_LONG_BONUS_H
 
 #include <fcntl.h>
 #include <stdio.h>
-#include "GNL/get_next_line.h"
-#include "printf/ft_printf.h"
-#include "printerr/printerr.h"
+#include "../GNL/get_next_line.h"
+#include "../printf/ft_printf.h"
+#include "../printerr/printerr.h"
 #include <stdlib.h>
 #include <unistd.h>
 #include <X11/X.h>
@@ -18,8 +18,9 @@ typedef struct s_player
 {
     int x;
     int y;
+    int previous_x;
+    int previous_y;
 } t_player;
-
 
 typedef struct s_data
 {
@@ -27,11 +28,19 @@ typedef struct s_data
     void *win;
     void *img_floor;
     void *img_wall;
-    void *img_player;
-    void *img_collectible;
+    void *img_up[4];
+    void *img_down[4];
+    void *img_left[4];
+    void *img_right[4];
+    void **img_player;
+    void *img_enemy_up[4];
+    void *img_enemy_down[4];
+    void *img_enemy_left[4];
+    void *img_enemy_right[4];
+    void *img_collectible[4];
     void *img_inactive_exit;
     void *img_active_exit;
-
+    void *img_exit;
     int tile_size;
     char **map;
     char **map_cpy;
@@ -41,7 +50,13 @@ typedef struct s_data
     size_t crystals_collected;
     t_player player;
     int player_moves;
+    int current_frame;
+    int frame_delay;
+    int enemy_move_delay;
+    int player_current_move;
 } t_data;
+
+
 
 void load_map(char *map_path, t_data *data);
 void check_map(t_data *data);
@@ -50,13 +65,29 @@ size_t	check_characters(t_data *data);
 size_t	check_lines(t_data *data);
 size_t check_path(t_data *data);
 size_t	check_walls(t_data *data);
-void render_map(t_data *data);
+int render_map(t_data *data);
 int close_window(t_data *data);
 int handle_key(int keycode, t_data *data);
 void move_up(t_data *data);
 void move_down(t_data *data);
 void move_left(t_data *data);
 void move_right(t_data *data);
+void enemy_victory(t_data *data);
+void	move_enemies(t_data *data);
+size_t	create_map_copy(t_data *data);
+size_t	free_map_cpy(t_data *data);
+void init_map_cpy(t_data* data);
+void load_player_frames1(t_data* data);
+void load_player_frames2(t_data* data);
+void	load_enemy_frames1(t_data *data);
+void	load_enemy_frames2(t_data *data);
+void	load_crystal_frames(t_data *data);
+
+
+
+
+
+
 
 
 

@@ -1,5 +1,31 @@
 #include "so_long.h"
 
+void put_image_to_window(t_data *data, int x, int y)
+{
+	if (data->map[y][x] == '0')
+				mlx_put_image_to_window(data->mlx, data->win, data->img_floor, x
+						* data->tile_size, y * data->tile_size);
+	else if (data->map[y][x] == '1')
+				mlx_put_image_to_window(data->mlx, data->win, data->img_wall, x
+						* data->tile_size, y * data->tile_size);
+	else if (data->map[y][x] == 'C')
+				mlx_put_image_to_window(data->mlx, data->win,
+						data->img_collectible, x * data->tile_size, y
+						* data->tile_size);
+	else if (data->map[y][x] == 'P')
+				mlx_put_image_to_window(data->mlx, data->win, data->img_player,
+						x * data->tile_size, y * data->tile_size);
+	else if (data->map[y][x] == 'E')
+	{
+		if(data->total_collectibles == data->crystals_collected)
+		mlx_put_image_to_window(data->mlx, data->win, data->img_active_exit, x
+		* data->tile_size, y * data->tile_size);
+		else
+		mlx_put_image_to_window(data->mlx, data->win, data->img_inactive_exit, x
+		* data->tile_size, y * data->tile_size);
+	}
+}
+
 void	render_map(t_data *data)
 {
 	size_t x;
@@ -11,22 +37,7 @@ void	render_map(t_data *data)
 		x = 0;
 		while (x < data->width)
 		{
-			if (data->map[y][x] == '0')
-				mlx_put_image_to_window(data->mlx, data->win, data->img_floor, x
-						* data->tile_size, y * data->tile_size);
-			if (data->map[y][x] == '1')
-				mlx_put_image_to_window(data->mlx, data->win, data->img_wall, x
-						* data->tile_size, y * data->tile_size);
-			if (data->map[y][x] == 'C')
-				mlx_put_image_to_window(data->mlx, data->win,
-						data->img_collectible, x * data->tile_size, y
-						* data->tile_size);
-			if (data->map[y][x] == 'P')
-				mlx_put_image_to_window(data->mlx, data->win, data->img_player,
-						x * data->tile_size, y * data->tile_size);
-			if (data->map[y][x] == 'E')
-				mlx_put_image_to_window(data->mlx, data->win, data->img_exit, x
-						* data->tile_size, y * data->tile_size);
+			put_image_to_window(data, x, y);
 			x++;
 		}
 		y++;

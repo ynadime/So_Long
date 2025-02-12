@@ -15,8 +15,8 @@ size_t	check_invalid_characters(t_data *data)
 				&& data->map[y][x] != 'C' && data->map[y][x] != 'E'
 				&& data->map[y][x] != 'P')
 			{
-				printerr("Error\n");
-				printerr("Invalid character found at (%i,%i)", x, y);
+				ft_printf("Error\n");
+				ft_printf("Invalid character found at (%i,%i)", x, y);
 				return (1);
 			}
 			x++;
@@ -46,7 +46,7 @@ size_t	check_collectibles(t_data *data)
 		y++;
 	}
 	if (collectibles < 1)
-		return (printerr("Error\nNo crystals were found on the map!"), 1);
+		return (ft_printf("Error\nNo crystals were found on the map!"), 1);
 	data->total_collectibles = collectibles;
 	return (0);
 }
@@ -71,7 +71,7 @@ size_t	check_exit(t_data *data)
 		y++;
 	}
 	if (exit != 1)
-		return (printerr("Error\nInvalid number of exits!"), 1);
+		return (ft_printf("Error\nInvalid number of exits!"), 1);
 	else
 		return (0);
 }
@@ -100,7 +100,7 @@ size_t	check_player(t_data *data)
 		y++;
 	}
 	if (player != 1)
-		return (printerr("Error\nInvalid number of players!"), 1);
+		return (ft_printf("Error\nInvalid number of players!"), 1);
 	else
 		return (0);
 }

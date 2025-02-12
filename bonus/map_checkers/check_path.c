@@ -33,12 +33,12 @@ size_t	check_if_reachable(t_data *data)
 		{
 			if (data->map[y][x] == 'E' && data->map_cpy[y][x] != 'X')
 			{
-				printerr("Error\nThe exit at (%i,%i) is unreachable!", x, y);
+				ft_printf("Error\nThe exit at (%i,%i) is unreachable!", x, y);
 				return (free_map_cpy(data));
 			}
 			if (data->map[y][x] == 'C' && data->map_cpy[y][x] != 'X')
 			{
-				printerr("Error\nThe chest at (%i,%i) is unreachable!", x, y);
+				ft_printf("Error\nThe chest at (%i,%i) is unreachable!", x, y);
 				return (free_map_cpy(data));
 			}
 			x++;

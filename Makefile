@@ -1,4 +1,4 @@
-NAME = So_long
+NAME = so_long
 
 SRC = main.c \
       render_map.c \
@@ -14,8 +14,6 @@ SRC = main.c \
       utils/ft_strtrim.c \
       printf/ft_printf.c \
       printf/ft_printf_utils.c \
-      printerr/printerr.c \
-      printerr/printerr_utils.c \
       map_checkers/check_characters.c \
       map_checkers/check_lines.c \
       map_checkers/check_path.c \
@@ -37,8 +35,6 @@ Bonus_SRC = bonus/main.c \
       bonus/utils/ft_strtrim.c \
       printf/ft_printf.c \
       printf/ft_printf_utils.c \
-      printerr/printerr.c \
-      printerr/printerr_utils.c \
       bonus/map_copy.c \
       bonus/map_checkers/check_characters.c \
       bonus/map_checkers/check_lines.c \

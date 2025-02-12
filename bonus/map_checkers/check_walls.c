@@ -11,8 +11,8 @@ size_t	check_walls(t_data *data)
 	{
 		if (data->map[0][x] != '1' || data->map[data->height - 1][x] != '1')
 		{
-			printerr("Error\nYour map must be surrounded by walls!");
-			return (1);
+			ft_printf("Error\nYour map must be surrounded by walls!");
+			return (free_map(data));
 		}
 		x++;
 	}
@@ -20,8 +20,8 @@ size_t	check_walls(t_data *data)
 	{
 		if (data->map[y][0] != '1' || data->map[y][data->width - 1] != '1')
 		{
-			printerr("Error\nYour map must be surrounded by walls!");
-			return (1);
+			ft_printf("Error\nYour map must be surrounded by walls!");
+			return (free_map(data));
 		}
 		y++;
 	}

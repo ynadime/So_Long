@@ -63,12 +63,12 @@ int	main(int ac, char **av)
 	innit_struct_members(&data);
 	if (ac != 2)
 	{
-		printerr("Error\nInvalid number of arguments!");
+		ft_printf("Error\nInvalid number of arguments!");
 		exit(1);
 	}
 	if (ft_strncmp(&av[1][ft_strlen(av[1]) - 4], ".ber", 4))
 	{
-		printerr("Error\nInvalid file name!");
+		ft_printf("Error\nInvalid file name!");
 		exit(1);
 	}
 	load_map(av[1], &data);

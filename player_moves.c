@@ -21,10 +21,6 @@ void	move_player(t_data *data, int x, int y)
 		data->player.y += y;
 		data->player_moves++;
 		render_map(data);
-		ft_printf("Player move count = %i\nCrystals collected %i/%i\n",
-					data->player_moves,
-					data->crystals_collected,
-					data->total_collectibles);
 	}
 }
 

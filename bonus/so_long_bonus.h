@@ -5,7 +5,6 @@
 #include <stdio.h>
 #include "../GNL/get_next_line.h"
 #include "../printf/ft_printf.h"
-#include "../printerr/printerr.h"
 #include <stdlib.h>
 #include <unistd.h>
 #include <X11/X.h>

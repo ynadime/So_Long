@@ -39,7 +39,7 @@ size_t	count_lines(char *map_path, t_data *data)
 		return (perror("Error\n"), 1);
 	line = get_next_line(fd);
 	if (!line)
-		return (printerr("Error\nYour file is empty!"), 1);
+		return (ft_printf("Error\nYour file is empty!"), 1);
 	while (line)
 	{
 		lines++;

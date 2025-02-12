@@ -8,7 +8,7 @@ size_t	check_lines(t_data *data)
 	while (data->map[i] && data->map[i + 1])
 	{
 		if (ft_strlen(data->map[i]) != ft_strlen(data->map[i + 1]))
-			return (printerr("Error\nYour map must be rectangular!"),
+			return (ft_printf("Error\nYour map must be rectangular!"),
 				free_map(data));
 		i++;
 	}

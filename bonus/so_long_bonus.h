@@ -7,7 +7,6 @@
 #include "../printf/ft_printf.h"
 #include <stdlib.h>
 #include <unistd.h>
-#include <X11/X.h>
 #include <mlx.h>
 
 #define MAX_WIDTH 1920
@@ -90,8 +89,8 @@ void	load_crystal_frames(t_data *data);
 
 
 
-
-
+char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_itoa(int n);
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
 size_t	ft_strlen(const char *s);
 char	*ft_strtrim(char const *s1, char const *set);

@@ -1,5 +1,16 @@
 #include "so_long_bonus.h"
 
+void update_counter(t_data *data)
+{
+	char *str;
+	char *count;
+	count = ft_itoa(data->player_moves);
+	str = ft_strjoin("Player move count: ", count);
+	mlx_string_put(data->mlx, data->win,  10, (data->height * data->tile_size) - 25, 0xffffff, str);	
+	free(count);
+	free(str);
+}
+
 void put_enemy_image_to_window(t_data *data, int x, int y)
 {
 	if(data->map_cpy[y][x] == 'D' || data->map_cpy[y][x] == 'O' )
@@ -14,8 +25,6 @@ void put_enemy_image_to_window(t_data *data, int x, int y)
 	else if(data->map_cpy[y][x] == 'L' )
 	mlx_put_image_to_window(data->mlx, data->win, data->img_enemy_left[data->current_frame], x
 	* data->tile_size, y * data->tile_size);
-
-
 
 }
 
@@ -45,7 +54,7 @@ void put_image_to_window(t_data *data, int x, int y)
 	}
 	else if (data->map[y][x] == 'F')
 	put_enemy_image_to_window(data, x, y);
-
+	update_counter(data);
 }
 
 int	render_map(t_data *data)
@@ -54,7 +63,6 @@ int	render_map(t_data *data)
 	size_t y;
 	data->frame_delay++;
 	data->enemy_move_delay++;
-
 
 	if(data->frame_delay == 25)
 	{

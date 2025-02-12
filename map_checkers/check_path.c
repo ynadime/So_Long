@@ -82,7 +82,7 @@ size_t	check_path(t_data *data)
 {
 	data->map_cpy = (char **)malloc(sizeof(char *) * (data->height + 1));
 	if (!data->map_cpy)
-		return (perror("Error\n"), 1);
+		return (perror("Error\n"), free_map(data));
 	if (create_map_cpy(data))
 		return (free_map(data));
 	if (check_if_reachable(data))

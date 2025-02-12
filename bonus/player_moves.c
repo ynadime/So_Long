@@ -7,7 +7,7 @@ void	move_player(t_data *data, int x, int y)
 			if (data->crystals_collected != data->total_collectibles)
 				return ;
 			data->player_moves++;
-			printf("Game over, you won!");
+			ft_printf("Game over, you won!");
 			close_window(data);
 			exit(0);
 		}
@@ -21,7 +21,6 @@ void	move_player(t_data *data, int x, int y)
 		data->player.y += y;
 		data->player_moves++;
 		data->player_current_move = (data->player_current_move + 1) % 4;
-		ft_printf("Player move count = %i\n",data->player_moves);
 
 }
 

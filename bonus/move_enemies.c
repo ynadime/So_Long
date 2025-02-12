@@ -56,7 +56,6 @@ void	handle_enemy_movment(t_data *data, int x, int y)
 }
 void	enemy_win_move(t_data *data, int x, int y, char direction)
 {
-	printf("enemy win move\n");
 	if (direction == 'U')
 	update_enemy_pose(data, x, y, 'U');
 	

@@ -33,6 +33,7 @@ Bonus_SRC = bonus/main.c \
       bonus/utils/ft_strlen.c \
       bonus/utils/ft_strncmp.c \
       bonus/utils/ft_strtrim.c \
+      bonus/utils/ft_itoa.c \
       printf/ft_printf.c \
       printf/ft_printf_utils.c \
       bonus/map_copy.c \
@@ -50,7 +51,7 @@ OBJS = $(SRC:.c=.o)
 
 Bonus_OBJS = $(Bonus_SRC:.c=.o)
 
-MLX = -Lmlx -lmlx -L/usr/lib/X11 -lXext -lX11 #-fsanitize=address
+MLX = -Lmlx -lmlx -L/usr/lib/X11 -lXext -lX11 -fsanitize=address
 
 CC = cc
 

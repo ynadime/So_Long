@@ -7,7 +7,6 @@
 #include "printf/ft_printf.h"
 #include <stdlib.h>
 #include <unistd.h>
-#include <X11/X.h>
 #include <mlx.h>
 
 #define MAX_WIDTH 1920

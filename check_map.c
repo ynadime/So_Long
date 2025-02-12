@@ -10,4 +10,10 @@ void	check_map(t_data *data)
 		exit(1);
 	if (check_path(data))
 		exit(1);
+	if(data->width * data->tile_size > 1920 || data->height * data->tile_size > 1080)
+	{
+		ft_printf("Error\nYour map must not exceed the resolution of 1920x1080");
+		free_map(data);
+		exit(1);
+	}
 }

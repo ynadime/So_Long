@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   player_moves.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ynadime <ynadime@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/02/13 12:10:25 by ynadime           #+#    #+#             */
+/*   Updated: 2025/02/13 18:57:20 by ynadime          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "so_long.h"
 
 void	move_player(t_data *data, int x, int y)
@@ -20,7 +32,7 @@ void	move_player(t_data *data, int x, int y)
 		data->player.x += x;
 		data->player.y += y;
 		data->player_moves++;
-		ft_printf("Player move count: %i\n",data->player_moves);
+		ft_printf("Player move count: %i\n", data->player_moves);
 		render_map(data);
 	}
 }
@@ -29,14 +41,17 @@ void	move_up(t_data *data)
 {
 	move_player(data, 0, -1);
 }
+
 void	move_down(t_data *data)
 {
 	move_player(data, 0, +1);
 }
+
 void	move_left(t_data *data)
 {
 	move_player(data, -1, 0);
 }
+
 void	move_right(t_data *data)
 {
 	move_player(data, +1, 0);

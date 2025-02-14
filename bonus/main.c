@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ynadime <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/02/13 19:03:16 by ynadime           #+#    #+#             */
+/*   Updated: 2025/02/13 19:03:18 by ynadime          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "so_long_bonus.h"
 
-void innit_struct_members(t_data *data)
+void	innit_struct_members(t_data *data)
 {
 	data->crystals_collected = 0;
 	data->frame_delay = 0;
@@ -8,9 +20,9 @@ void innit_struct_members(t_data *data)
 	data->enemy_move_delay = 0;
 	data->current_frame = 0;
 	data->tile_size = 64;
+	data->player.previous_x = 0;
+	data->player.previous_y = 0;
 	data->player_current_move = 0;
-    data->player.previous_x = 0;
-    data->player.previous_y = 0;
 }
 
 void	create_window(t_data *data)
@@ -26,18 +38,16 @@ size_t	load_images(t_data *data)
 			&data->tile_size, &data->tile_size);
 	data->img_wall = mlx_xpm_file_to_image(data->mlx, "assets/wall.xpm",
 			&data->tile_size, &data->tile_size);
-	data->img_inactive_exit = mlx_xpm_file_to_image(data->mlx, "assets/idoor.xpm",
-		&data->tile_size, &data->tile_size);
+	data->img_inactive_exit = mlx_xpm_file_to_image(data->mlx,
+			"assets/idoor.xpm", &data->tile_size, &data->tile_size);
 	data->img_active_exit = mlx_xpm_file_to_image(data->mlx, "assets/adoor.xpm",
-		&data->tile_size, &data->tile_size);
+			&data->tile_size, &data->tile_size);
 	load_crystal_frames(data);
 	load_player_frames1(data);
 	load_player_frames2(data);
 	load_enemy_frames1(data);
 	load_enemy_frames2(data);
-
-	if (!(data->img_floor || data->img_wall
-|| data->img_exit))
+	if (!(data->img_floor || data->img_wall || data->img_exit))
 		return (1);
 	return (0);
 }

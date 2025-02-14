@@ -1,9 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   map_copy.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ynadime <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/02/13 12:13:51 by ynadime           #+#    #+#             */
+/*   Updated: 2025/02/13 12:13:52 by ynadime          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "so_long_bonus.h"
 
-void init_map_cpy(t_data* data)
+void	init_map_cpy(t_data *data)
 {
-	size_t i = 0;
-	while(data->map[i])
+	size_t	i;
+
+	i = 0;
+	while (data->map[i])
 	{
 		ft_memset(data->map_cpy[i], 'O', data->width);
 		i++;

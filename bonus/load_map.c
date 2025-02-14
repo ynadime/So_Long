@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   load_map.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ynadime <ynadime@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/02/13 12:13:42 by ynadime           #+#    #+#             */
+/*   Updated: 2025/02/14 15:17:13 by ynadime          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "so_long_bonus.h"
 
 size_t	init_map(t_data *data, char *map_path)
@@ -17,7 +29,8 @@ size_t	init_map(t_data *data, char *map_path)
 	{
 		line = get_next_line(fd);
 		data->map[i] = ft_strtrim(line, "\n");
-		free(line);
+		if (line)
+			free(line);
 		if (!data->map[i])
 			return (perror("Error\n"), free_map(data));
 		i++;

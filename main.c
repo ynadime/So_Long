@@ -1,8 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ynadime <ynadime@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/02/13 19:04:04 by ynadime           #+#    #+#             */
+/*   Updated: 2025/02/14 11:57:47 by ynadime          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "so_long.h"
 
 void	create_window(t_data *data)
 {
-	data->tile_size = 64;
 	data->mlx = mlx_init();
 	data->win = mlx_new_window(data->mlx, data->width * data->tile_size,
 			data->height * data->tile_size, "So long");
@@ -14,14 +25,14 @@ size_t	load_images(t_data *data)
 			&data->tile_size, &data->tile_size);
 	data->img_wall = mlx_xpm_file_to_image(data->mlx, "assets/wall.xpm",
 			&data->tile_size, &data->tile_size);
-	data->img_collectible = mlx_xpm_file_to_image(data->mlx, "assets/crystal.xpm",
-			&data->tile_size, &data->tile_size);
+	data->img_collectible = mlx_xpm_file_to_image(data->mlx,
+			"assets/crystal.xpm", &data->tile_size, &data->tile_size);
 	data->img_player = mlx_xpm_file_to_image(data->mlx, "assets/player.xpm",
 			&data->tile_size, &data->tile_size);
-	data->img_inactive_exit = mlx_xpm_file_to_image(data->mlx, "assets/idoor.xpm",
-		&data->tile_size, &data->tile_size);
+	data->img_inactive_exit = mlx_xpm_file_to_image(data->mlx,
+			"assets/idoor.xpm", &data->tile_size, &data->tile_size);
 	data->img_active_exit = mlx_xpm_file_to_image(data->mlx, "assets/adoor.xpm",
-		&data->tile_size, &data->tile_size);	
+			&data->tile_size, &data->tile_size);
 	if (!(data->img_floor || data->img_wall || data->img_collectible
 			|| data->img_player))
 		return (1);
@@ -44,8 +55,9 @@ size_t	free_map(t_data *data)
 
 int	main(int ac, char **av)
 {
-	t_data data;
+	t_data	data;
 
+	data.tile_size = 64;
 	data.crystals_collected = 0;
 	if (ac != 2)
 	{

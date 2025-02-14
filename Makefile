@@ -6,7 +6,7 @@
 #    By: ynadime <ynadime@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/13 12:10:16 by ynadime           #+#    #+#              #
-#    Updated: 2025/02/14 15:32:31 by ynadime          ###   ########.fr        #
+#    Updated: 2025/02/14 15:50:40 by ynadime          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -63,7 +63,7 @@ OBJS = $(SRC:.c=.o)
 
 Bonus_OBJS = $(Bonus_SRC:.c=.o)
 
-MLX = -Lmlx -lmlx -L/usr/lib/X11 -lXext -lX11 -fsanitize=address
+MLX = -Lmlx -lmlx -L/usr/lib/X11 -lXext -lX11
 
 CC = cc
 

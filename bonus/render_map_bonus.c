@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   render_map.c                                       :+:      :+:    :+:   */
+/*   render_map_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ynadime <ynadime@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 19:03:47 by ynadime           #+#    #+#             */
-/*   Updated: 2025/02/13 19:38:38 by ynadime          ###   ########.fr       */
+/*   Updated: 2025/02/17 13:31:58 by ynadime          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	delay(t_data *data)
 		data->current_frame = (data->current_frame + 1) % 4;
 		data->frame_delay = 0;
 	}
-	if (data->enemy_move_delay == 150)
+	if (data->enemy_move_delay == 300)
 	{
 		move_enemies(data);
 		data->enemy_move_delay = 0;

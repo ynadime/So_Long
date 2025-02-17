@@ -6,7 +6,7 @@
 /*   By: ynadime <ynadime@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 12:10:32 by ynadime           #+#    #+#             */
-/*   Updated: 2025/02/14 15:30:28 by ynadime          ###   ########.fr       */
+/*   Updated: 2025/02/17 13:47:27 by ynadime          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,8 @@ size_t			check_path(t_data *data);
 size_t			check_walls(t_data *data);
 void			render_map(t_data *data);
 int				close_window(t_data *data);
+void			failure_close_window(t_data *data);
+
 int				handle_key(int keycode, t_data *data);
 void			move_up(t_data *data);
 void			move_down(t_data *data);

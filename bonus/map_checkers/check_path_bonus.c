@@ -6,7 +6,7 @@
 /*   By: ynadime <ynadime@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 12:15:31 by ynadime           #+#    #+#             */
-/*   Updated: 2025/02/13 12:39:47 by ynadime          ###   ########.fr       */
+/*   Updated: 2025/02/14 16:28:28 by ynadime          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ size_t	check_if_reachable(t_data *data)
 			}
 			if (data->map[y][x] == 'C' && data->map_cpy[y][x] != 'X')
 			{
-				ft_printf("Error\nThe chest at (%i,%i) is unreachable!", x, y);
+				ft_printf("Error\nCrystal at (%i,%i) is unreachable!", x, y);
 				return (free_map_cpy(data));
 			}
 			x++;

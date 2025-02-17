@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_path.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ynadime <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: ynadime <ynadime@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 12:11:41 by ynadime           #+#    #+#             */
-/*   Updated: 2025/02/13 12:11:42 by ynadime          ###   ########.fr       */
+/*   Updated: 2025/02/14 16:27:26 by ynadime          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ size_t	check_if_reachable(t_data *data)
 			}
 			if (data->map[y][x] == 'C' && data->map_cpy[y][x] != 'X')
 			{
-				ft_printf("Error\nThe chest at (%i,%i) is unreachable!", x, y);
+				ft_printf("Error\nCrystal at (%i,%i) is unreachable!", x, y);
 				return (free_map_cpy(data));
 			}
 			x++;

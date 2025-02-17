@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long_bonus.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ynadime <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: ynadime <ynadime@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 19:02:54 by ynadime           #+#    #+#             */
-/*   Updated: 2025/02/13 19:02:56 by ynadime          ###   ########.fr       */
+/*   Updated: 2025/02/17 14:56:40 by ynadime          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,6 @@ typedef struct s_data
 	void		*img_collectible[4];
 	void		*img_inactive_exit;
 	void		*img_active_exit;
-	void		*img_exit;
 	int			tile_size;
 	char		**map;
 	char		**map_cpy;
@@ -90,6 +89,9 @@ void			load_player_frames2(t_data *data);
 void			load_enemy_frames1(t_data *data);
 void			load_enemy_frames2(t_data *data);
 void			load_crystal_frames(t_data *data);
+void			destroy_images(t_data *data);
+void 			failure_close_window(t_data *data);
+
 
 char			*ft_strjoin(char const *s1, char const *s2);
 char			*ft_itoa(int n);

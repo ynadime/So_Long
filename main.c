@@ -6,7 +6,7 @@
 /*   By: ynadime <ynadime@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 19:04:04 by ynadime           #+#    #+#             */
-/*   Updated: 2025/02/17 13:49:48 by ynadime          ###   ########.fr       */
+/*   Updated: 2025/02/18 12:20:41 by ynadime          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,10 @@ void	load_images(t_data *data)
 	if (!data->img_floor || !data->img_wall || !data->img_collectible
 		|| !data->img_player || !data->img_inactive_exit
 		|| !data->img_active_exit)
-		{
+	{
 		ft_printf("Error\nFailed to load images!");
 		failure_close_window(data);
-		}
+	}
 }
 
 size_t	free_map(t_data *data)

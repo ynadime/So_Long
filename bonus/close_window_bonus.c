@@ -6,7 +6,7 @@
 /*   By: ynadime <ynadime@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 12:14:12 by ynadime           #+#    #+#             */
-/*   Updated: 2025/02/17 14:57:02 by ynadime          ###   ########.fr       */
+/*   Updated: 2025/02/18 12:20:03 by ynadime          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ void	destroy_images(t_data *data)
 		mlx_destroy_image(data->mlx, data->img_wall);
 	destroy_frames(data);
 }
+
 void	failure_close_window(t_data *data)
 {
 	mlx_destroy_window(data->mlx, data->win);

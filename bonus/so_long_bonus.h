@@ -6,7 +6,7 @@
 /*   By: ynadime <ynadime@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 19:02:54 by ynadime           #+#    #+#             */
-/*   Updated: 2025/02/18 12:19:52 by ynadime          ###   ########.fr       */
+/*   Updated: 2025/02/22 21:08:29 by ynadime          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,6 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
-
-# define MAX_WIDTH 1920
-# define MAX_HEIGHT 1080
 
 typedef struct s_player
 {

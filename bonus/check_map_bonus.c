@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_map_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ynadime <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: ynadime <ynadime@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 12:31:53 by ynadime           #+#    #+#             */
-/*   Updated: 2025/02/18 12:31:55 by ynadime          ###   ########.fr       */
+/*   Updated: 2025/02/22 21:08:18 by ynadime          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,4 @@ void	check_map(t_data *data)
 		exit(1);
 	if (check_path(data))
 		exit(1);
-	if (data->width * data->tile_size > MAX_WIDTH || data->height
-		* data->tile_size > MAX_HEIGHT)
-	{
-		ft_printf("Error\nYour map exceeds the resolution of 1920x1080!");
-		free_map(data);
-		free_map_cpy(data);
-		exit(1);
-	}
 }

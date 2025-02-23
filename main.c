@@ -6,7 +6,7 @@
 /*   By: ynadime <ynadime@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 19:04:04 by ynadime           #+#    #+#             */
-/*   Updated: 2025/02/18 12:20:41 by ynadime          ###   ########.fr       */
+/*   Updated: 2025/02/23 09:15:41 by ynadime          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,9 @@ int	main(int ac, char **av)
 		ft_printf("Error\nInvalid number of arguments!");
 		exit(1);
 	}
-	if (ft_strncmp(&av[1][ft_strlen(av[1]) - 4], ".ber", 4))
+	if (ft_strncmp(&av[1][ft_strlen(av[1]) - 4], ".ber", 4)
+		|| ft_strlen(av[1]) == 4
+		|| !ft_strncmp(&av[1][ft_strlen(av[1]) - 5], "/.ber", 5))
 	{
 		ft_printf("Error\nInvalid file name!");
 		exit(1);

@@ -6,7 +6,7 @@
 /*   By: ynadime <ynadime@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 12:09:37 by ynadime           #+#    #+#             */
-/*   Updated: 2025/02/14 15:29:08 by ynadime          ###   ########.fr       */
+/*   Updated: 2025/02/22 21:08:02 by ynadime          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,4 @@ void	check_map(t_data *data)
 		exit(1);
 	if (check_path(data))
 		exit(1);
-	if (data->width * data->tile_size > MAX_WIDTH || data->height
-		* data->tile_size > MAX_HEIGHT)
-	{
-		ft_printf("Error\nYour map exceeds the resolution of 1920x1080!");
-		free_map(data);
-		exit(1);
-	}
 }
